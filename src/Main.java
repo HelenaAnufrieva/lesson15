@@ -1,11 +1,17 @@
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * Created by Hillel on 10.07.2017.
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+
+        Path target = Paths.get("D:\\MyStuff.txt");
+        Path file = Files.createFile(target);
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("temp.out"))) {
             TestSerial ts = new TestSerial("name", 2);
